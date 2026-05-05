@@ -7,4 +7,5 @@ export { InfoPopUp } from "./InfoPopUp";
 export { Player } from "./Player";
 export { Result } from "./Result";
 export { Search } from "./Search";
+export { StatsPopUp } from "./StatsPopUp";
 export { YouTube } from "./YouTube";

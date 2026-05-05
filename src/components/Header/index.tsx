@@ -1,13 +1,14 @@
 import React from "react";
-import { IoInformationCircleOutline } from "react-icons/io5";
+import { IoInformationCircleOutline,IoStatsChartOutline } from "react-icons/io5";
 
 import * as Styled from "./index.styled";
 
 interface Props {
   openInfoPopUp: () => void;
+  openStatsPopUp: () => void;
 }
 
-export function Header({ openInfoPopUp }: Props) {
+export function Header({ openInfoPopUp, openStatsPopUp }: Props) {
   return (
     <Styled.Container>
       <Styled.Content>
@@ -18,8 +19,16 @@ export function Header({ openInfoPopUp }: Props) {
           height={30}
         />
 
-        <Styled.Logo>Słuchaj.fun</Styled.Logo>
-        <a href="#"></a>
+        <Styled.Logo><a href="#">FFXIV Heardle</a></Styled.Logo>
+
+        <Styled.Stats>
+          <IoStatsChartOutline
+          onClick={openStatsPopUp}
+          size={30}
+          width={30}
+          height={30}
+        />
+          </Styled.Stats>
       </Styled.Content>
     </Styled.Container>
   );

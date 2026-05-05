@@ -8,7 +8,7 @@ import { GuessType } from "./types/guess";
 
 import { todaysSolution } from "./helpers";
 
-import { Header, InfoPopUp, Game, Footer } from "./components";
+import { Header, InfoPopUp, StatsPopUp, Game, Footer } from "./components";
 
 import * as Styled from "./app.styled";
 
@@ -74,8 +74,15 @@ function App() {
   const [isInfoPopUpOpen, setIsInfoPopUpOpen] =
     React.useState<boolean>(firstRun);
 
+  const [isStatsPopUpOpen, setIsStatsPopUpOpen] =
+    React.useState<boolean>(false);
+
   const openInfoPopUp = React.useCallback(() => {
     setIsInfoPopUpOpen(true);
+  }, []);
+
+  const openStatsPopUp = React.useCallback(() => {
+    setIsStatsPopUpOpen(true);
   }, []);
 
   const closeInfoPopUp = React.useCallback(() => {
@@ -86,6 +93,10 @@ function App() {
       setIsInfoPopUpOpen(false);
     }
   }, [localStorage.getItem("firstRun")]);
+
+  const closeStatsPopUp = React.useCallback(() => {
+    setIsStatsPopUpOpen(false);
+  }, []);
 
   const skip = React.useCallback(() => {
     setGuesses((guesses: GuessType[]) => {
@@ -143,8 +154,9 @@ function App() {
 
   return (
     <main>
-      <Header openInfoPopUp={openInfoPopUp} />
+      <Header openInfoPopUp={openInfoPopUp} openStatsPopUp={openStatsPopUp}/>
       {isInfoPopUpOpen && <InfoPopUp onClose={closeInfoPopUp} />}
+      {isStatsPopUpOpen && <StatsPopUp onClose={closeStatsPopUp} />}
       <Styled.Container>
         <Game
           guesses={guesses}

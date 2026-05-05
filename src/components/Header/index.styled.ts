@@ -20,7 +20,7 @@ export const Content = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  width: 40%;
+  width: 50%;
 
   @media (max-width: 768px) {
     width: 95%;
@@ -46,4 +46,12 @@ export const Logo = styled.h1`
 
   -webkit-touch-callout: none;
   user-select: none;
+
+  a {
+  text-decoration: none;
+  }
+`;
+
+export const Stats = styled.div`
+  justify-self: right;
 `;
