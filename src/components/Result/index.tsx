@@ -6,6 +6,7 @@ import { scoreToEmoji } from "../../helpers";
 
 import { Button } from "../Button";
 import { YouTube } from "../YouTube";
+import { TimeToNext } from "../TimeToNext";
 
 import * as Styled from "./index.styled";
 
