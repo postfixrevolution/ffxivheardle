@@ -7,10 +7,11 @@ export function Footer() {
   return (
     <footer>
       <Styled.Text>
-        Made with <IoHeart /> by{" "}
-        <Styled.Link href="https://twitter.com/synowski_maciej">
-          Maciej Synowski
-        </Styled.Link>
+        Made with the love and will to forge ahead.
+        <br/>
+        <Styled.Credit>
+          © postfixrevolution
+        </Styled.Credit>
       </Styled.Text>
     </footer>
   );

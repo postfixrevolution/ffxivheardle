@@ -8,7 +8,7 @@ export function scoreToEmoji(guesses: GuessType[]): string {
     empty: "⬛️",
   };
   const todaysDate = new Date();
-  const prefix = `Sluchaj.fun - ${todaysDate.toLocaleDateString()} 🎧`;
+  const prefix = `FFXIV Heardle - ${todaysDate.toLocaleDateString()} 🎧`;
 
   let scoreEmoji = "";
 

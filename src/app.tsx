@@ -111,7 +111,7 @@ function App() {
     const isCorrect = selectedSong === todaysSolution;
 
     if (!selectedSong) {
-      alert("Wybierz piosenkę");
+      alert("Choose a song");
       return;
     }
 

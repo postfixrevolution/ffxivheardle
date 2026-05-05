@@ -25,9 +25,10 @@ export const SongTitle = styled.h3`
   margin-top: 0;
 `;
 
-export const TimeToNext = styled.h4`
+export const TimeToNext = styled.p`
   @media (max-width: 768px) {
     text-align: center;
     width: 100%;
+    font-weight: normal;
   }
 `;

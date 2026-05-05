@@ -14,7 +14,7 @@ export function YouTube({ id }: Props) {
           width: "336",
           height: "189",
           playerVars: {
-            autoplay: 1,
+            autoplay: 0,
             playsinline: 1,
           },
         }}

@@ -22,56 +22,46 @@ export function Result({
   guesses,
   currentTry,
 }: Props) {
-  const hoursToNextDay = Math.floor(
-    (new Date(new Date().setHours(24, 0, 0, 0)).getTime() -
-      new Date().getTime()) /
-      1000 /
-      60 /
-      60
-  );
-
-  const textForTry = ["Wow!", "Świetnie", "Nieźle", "Super", "Dobrze"];
+  const textForTry = ["Wow!", "Great", "Nice", "Well done", "Good"];
 
   if (didGuess) {
     const copyResult = React.useCallback(() => {
       navigator.clipboard.writeText(scoreToEmoji(guesses));
     }, [guesses]);
 
-    const triesConjugation = currentTry === 1 ? "próbie" : "próbach";
+    const triesConjugation = currentTry === 1 ? "try" : "tries";
 
     return (
       <>
         <Styled.ResultTitle>{textForTry[currentTry - 1]}</Styled.ResultTitle>
         <Styled.SongTitle>
-          Dzisiejsza piosenka, to {todaysSolution.artist} -{" "}
-          {todaysSolution.name}
+          The song for today is {todaysSolution.name} - {todaysSolution.artist}
         </Styled.SongTitle>
         <Styled.Tries>
-          Udało Ci się zgadnąć w {currentTry} {triesConjugation}
+          You guessed it in {currentTry} {triesConjugation}
         </Styled.Tries>
         <YouTube id={todaysSolution.youtubeId} />
         <Button onClick={copyResult} variant="green">
-          Skopiuj wynik
+          Copy Result
         </Button>
         <Styled.TimeToNext>
-          Pamiętaj, by wrócić jutro - następny Słuchaj.fun za: {hoursToNextDay}{" "}
-          godzin!
+             Remember to come back tomorrow - the next FFXIV Heardle will be available in:
         </Styled.TimeToNext>
+        <TimeToNext />
       </>
     );
   } else {
     return (
       <>
-        <Styled.ResultTitle>Niestety, nie udało się...</Styled.ResultTitle>
+        <Styled.ResultTitle>Sorry, you didn't get it this time...</Styled.ResultTitle>
         <Styled.SongTitle>
-          Dzisiejsza piosenka, to {todaysSolution.artist} -{" "}
-          {todaysSolution.name}
+          The song for today is {todaysSolution.name} - {todaysSolution.artist}
         </Styled.SongTitle>
         <YouTube id={todaysSolution.youtubeId} />
         <Styled.TimeToNext>
-          Spróbuj ponownie jutro - następny Słuchaj.fun za: {hoursToNextDay}{" "}
-          godzin!
+             Remember to come back tomorrow - the next FFXIV Heardle will be available in:
         </Styled.TimeToNext>
+        <TimeToNext />
       </>
     );
   }
