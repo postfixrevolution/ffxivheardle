@@ -1,10 +1,8 @@
-# Słuchaj.fun
+# FFXIV Heardle
 ![Screenshot of the website](https://i.imgur.com/PnLgjWQ.png)
 
-Made in few hours, [Słuchaj.fun](https://sluchaj.fun) is a clone of famous [Heardle](https://heardle.app) - "that daily music game". <br />
-It contains Polish songs, that are played through the YouTube iFrame API.
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+Copied from [Słuchaj.fun](https://sluchaj.fun), a clone of the famous [Heardle](https://heardle.app) - daily music game. <br />
+It contains FFXIV music, played through the YouTube iFrame API.
 
 # Tech stack
 * [React](https://reactjs.org)
@@ -16,15 +14,6 @@ It contains Polish songs, that are played through the YouTube iFrame API.
 * Add Storybook
 * Add tests
 * Disable/bypass iFrame's Media Session API
-
-# Contributing
-We're open to contributions! Feel free to open an issue or pull request.
-
-Keep in mind, that this repository follows the [Conventional Commits](https://conventionalcommits.org/) specification.
-
-Please format the code with ESLint and Prettier as well.
-
-`npx eslint src/ --fix`
 
 # Building (default React stuff)
 
@@ -45,6 +34,10 @@ You will also see any lint errors in the console.
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
+
+Please format the code with ESLint and Prettier as well.
+
+`npx eslint src/ --fix`
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
